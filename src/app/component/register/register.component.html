@@ -1,0 +1,17 @@
+<html>
+  <head></head>
+  <body>
+    <div class="container">
+      <form action="" [formGroup]="registerForm" class="text-center">
+        <h3 style="text-align: center;">Register Form</h3>
+        <label for="" >UserName</label>
+        <input type="text" name="userName" formControlName="username" ><br><br>
+        <label for="">Email-Id</label>
+        <input type="email" name="email" formControlName="email" ><br><br>
+        <label for="" >Password</label>
+        <input type="password" name="password" formControlName="password" ><br><br>
+        <a type="submit" name="submit" class="btn btn-outline-success btn-sm back" (click)="onSubmit()">Register</a>
+      </form>
+    </div>
+  </body>
+</html>

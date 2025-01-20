@@ -1,0 +1,39 @@
+<html>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <body>
+    <div class="container" >
+    <form class="text-center" action="" [formGroup]="editForm">
+           <h3 >Update Student</h3>
+                <label>Name</label>&nbsp;
+                <input type="text" name="name"  formControlName="name" >
+                <div class="text-danger"*ngIf="formSubmitted && editForm.controls?.['name'].invalid">
+                  <span *ngIf="editForm.controls?.['name'].errors?.['required']">Name is required</span>
+                </div>
+                <br><br>
+                <label >Email_Id</label>&nbsp;
+                <input type="text" name="email"  formControlName="email" >
+                <div class="text-danger"*ngIf="formSubmitted && editForm.controls?.['email'].invalid">
+                  <span *ngIf="editForm.controls?.['email'].errors?.['required']">Email is required</span>
+                  <span *ngIf="editForm.controls?.['email'].errors?.['email']">Invalid email format</span>
+                </div>
+                <br><br>
+                <label >Mobileno</label>&nbsp;
+                <input type="tel" name="mobileno"  formControlName="mobileno"  appHighlight>
+                <div class="text-danger"*ngIf="formSubmitted &&editForm.controls?.['mobileno'].invalid">
+                  <span *ngIf="editForm.controls?.['mobileno'].errors?.['required']">Mobileno is required</span>
+                  <span *ngIf="editForm.controls?.['mobileno'].errors?.['pattern']">Phone number must be at least 10 numbers</span>
+                </div>
+                <br><br>
+                <label >Address</label>&nbsp;
+                <input type="text" name="address"  formControlName="address" >
+                <div class="text-danger"*ngIf="formSubmitted && editForm.controls?.['address'].invalid">
+                  <span *ngIf="editForm.controls?.['address'].errors?.['required']">Address is required</span>
+                </div>
+                <br><br>
+              <button type="submit" name="submit" class="btn btn-primary" (click)="updateRecord()">Update</button>&nbsp;
+              <button type="submit" name="submit" class="btn btn-success" routerLink="/form">Back</button>
+        </form>
+    </div>
+    </body>
+</html>
+
